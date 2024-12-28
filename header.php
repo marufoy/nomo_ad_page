@@ -13,18 +13,17 @@
     <!-- ヘッダー部分 -->
     <header>
         <div class="site-header">
-            <!-- <div class="logo">
+            <div class="logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Site Logo">
+                   <h1 class="main-logo-title">わいあい広告</h1>
+                   <h2 class="sub-logo-title">行きつけのお得をもっと身近に！</h2>
                 </a>
-            </div> -->
-            <nav>
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'main_menu', // ここで設定するメニュー
-                    'menu_class'      => 'main-menu', // メニューのクラス
-                ) );
-                ?>
-            </nav>
+            </div>
+
+            <div class="posting-button">
+                <a href="<?php echo esc_url( home_url ('/') ) ?>">
+                    <span>掲載希望の方はこちら →</span>
+                </a>
+            </div>
         </div>
     </header>
