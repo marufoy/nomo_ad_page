@@ -21,6 +21,27 @@
         wp_reset_postdata();
     endif;
     ?>
+
+<div class="genre-container">
+    <h2>掲載ジャンル</h2>
+    <div class="genre-grid">
+        <?php
+        $genres = get_terms(array(
+            'taxonomy' => 'genre',
+            'hide_empty' => false,
+        ));
+
+        foreach ($genres as $genre) : ?>
+            <a href="<?php echo get_term_link($genre); ?>" class="genre-item">
+                <div class="genre-image" style="background-image: url('<?php echo get_field('genre_image', $genre); ?>');">
+                    <p><?php echo esc_html($genre->name); ?></p>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
 </div>
 
 <?php get_footer(); ?>
