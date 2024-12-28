@@ -1,0 +1,11 @@
+/*
+Theme Name: ad_page_theme
+Version: 1.0
+*/
+
+/* 以下にスタイルを追加 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
