@@ -1,8 +1,5 @@
-// front-page.php
-
 <?php get_header(); ?>
 
-<!-- 最新情報 -->
 <div class="latest-info">
     <h2>最新情報</h2>
     <?php
@@ -24,19 +21,6 @@
         wp_reset_postdata();
     endif;
     ?>
-</div>
-
-<!-- ジャンル別画像 -->
-<div class="genre-images">
-    <a href="<?php echo get_term_link('飲食', 'genre'); ?>">
-        <img src="飲食の画像URL" alt="飲食">
-        <p>飲食</p>
-    </a>
-    <a href="<?php echo get_term_link('小売店', 'genre'); ?>">
-        <img src="小売店の画像URL" alt="小売店">
-        <p>小売店</p>
-    </a>
-    <!-- 他のジャンルも同様に -->
 </div>
 
 <?php get_footer(); ?>
