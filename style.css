@@ -11,6 +11,13 @@ body {
     background-color: rgb(204, 199, 137);
 }
 
+.container {
+    width: 100%;         /* 画面全体を占める */
+    max-width: 1300px;   /* 最大幅を指定 */
+    margin: 0 auto;      /* 中央揃え */
+    padding: 20px;   /* 固定の余白 */
+    border: 1px solid lime;
+}
 
 .site-header{
     background-color: #000;
