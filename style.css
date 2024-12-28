@@ -16,7 +16,6 @@ body {
     max-width: 1300px;   /* 最大幅を指定 */
     margin: 0 auto;      /* 中央揃え */
     padding: 20px;   /* 固定の余白 */
-    border: 1px solid lime;
 }
 
 .site-header{
@@ -51,4 +50,55 @@ body {
     }
 }
 
+.genre-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.genre-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.genre-item {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.genre-image {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: 2px solid lime;
+}
+
+.genre-image p {
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.genre-item:hover .genre-image {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
 
