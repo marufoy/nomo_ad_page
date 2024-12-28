@@ -3,6 +3,7 @@
 <div class="latest-info">
     <h2>最新情報</h2>
     <?php
+
     $args = array(
         'post_type' => 'shop_info',
         'posts_per_page' => 5, // 最新5件を取得
@@ -31,9 +32,17 @@
             'hide_empty' => false,
         ));
 
-        foreach ($genres as $genre) : ?>
+        foreach ($genres as $genre) :
+         // ACFで設定したカスタムフィールドから画像URLを取得
+         $genre_image = get_field('genre_image', $genre);
+
+         if(!$genre_image) {
+            $genre_image = "http://adpagedev.local/wp-content/uploads/2024/12/keyboard-6753584_1280.jpg";
+         }
+
+        ?>
             <a href="<?php echo get_term_link($genre); ?>" class="genre-item">
-                <div class="genre-image" style="background-image: url('<?php echo get_field('genre_image', $genre); ?>');">
+                <div class="genre-image" style="background-image: url('<?php echo $genre_image ?>');">
                     <p><?php echo esc_html($genre->name); ?></p>
                 </div>
             </a>
