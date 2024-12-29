@@ -29,7 +29,6 @@
                 <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
                 <?php
             endif;
-            the_excerpt(); // 簡単な説明を表示
         endwhile;
         wp_reset_postdata();
     endif;
