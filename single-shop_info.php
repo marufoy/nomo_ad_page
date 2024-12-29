@@ -16,7 +16,7 @@
             <div class="shop-content">
                 <?php
                 // 店舗画像を表示
-                $store_image = get_field('store_image'); // 'store_image' は設定したフィールド名
+                $store_image = get_field('store_image'); 
                 if ($store_image) {
                     echo '<div class="custom-thumbnail">';
                     echo '<img src="' . esc_url($store_image['url']) . '" alt="' . esc_attr($store_image['alt']) . '">';

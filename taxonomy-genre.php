@@ -7,23 +7,23 @@
             <?php while (have_posts()):
                 the_post(); ?>
                 <div class="shop-item">
-                    <h2><?php the_title(); ?></h2>
                     <a href="<?php the_permalink(); ?>">
                         <?php
                         // ACFで設定したサムネイル画像を取得
-                        $thumbnail = get_field('store_image'); // 'thumbnail_image' はACFのフィールド名
+                        $thumbnail = get_field('store_image'); // 'store_image' はACFのフィールド名
                         if ($thumbnail): ?>
                             <div class="shop-image custom-thumbnail">
                                 <img src="<?php echo esc_url($thumbnail['url']); ?>"
-                                    alt="<?php echo esc_attr($thumbnail['alt']); ?>">
+                                alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                             </div>
-                        <?php else: ?>
-                            <!-- デフォルト画像 -->
-                            <div class="shop-image custom-thumbnail">
-                                <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
-                            </div>
-                        <?php endif; ?>
-                        <p>
+                            <?php else: ?>
+                                <!-- デフォルト画像 -->
+                                <div class="shop-image custom-thumbnail">
+                                    <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
+                                </div>
+                                <?php endif; ?>
+                                <p>
+                            <h2><?php the_title(); ?></h2>
                             <?php
                             // ACFフィールド 'store_discription' を取得
                             $description = get_field('store_discription');
