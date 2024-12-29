@@ -106,5 +106,48 @@ body {
     width: 150px; /* 幅を固定 */
     height: auto; /* 高さはアスペクト比を保つ */
     display: block; /* 不要な余白を防ぐ */
-    margin: 0 auto; /* 画像を中央寄せにする */
+}
+
+.single-shop-info{
+   border: 1px solid red;
+
+}
+
+
+
+.single-shop-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.store-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.shop-content {
+    display: flex;
+    align-items: flex-start; /* 縦方向の揃え方 */
+    gap: 20px; /* 画像と本文の間の余白 */
+}
+
+.custom-thumbnail {
+    max-width: 300px; /* 画像の最大幅を設定 */
+    flex-shrink: 0; /* 画像のサイズを固定 */
+}
+
+.custom-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* 角を丸める場合 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 画像に影を追加 */
+}
+
+.shop-description {
+    flex: 1; /* 本文部分が残りの幅を使用 */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
 }
