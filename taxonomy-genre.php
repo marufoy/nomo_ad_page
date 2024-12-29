@@ -14,26 +14,28 @@
                         if ($thumbnail): ?>
                             <div class="shop-image custom-thumbnail">
                                 <img src="<?php echo esc_url($thumbnail['url']); ?>"
-                                alt="<?php echo esc_attr($thumbnail['alt']); ?>">
+                                    alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                             </div>
-                            <?php else: ?>
-                                <!-- デフォルト画像 -->
-                                <div class="shop-image custom-thumbnail">
-                                    <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
-                                </div>
-                                <?php endif; ?>
-                                <p>
+                        <?php else: ?>
+                            <!-- デフォルト画像 -->
+                            <div class="shop-image custom-thumbnail">
+                                <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
+                            </div>
+                        <?php endif; ?>
+                        <p>
                             <h2><?php the_title(); ?></h2>
                             <?php
                             // ACFフィールド 'store_discription' を取得
                             $description = get_field('store_discription');
 
                             // フィールドが存在する場合にトリムして表示
-                            if ($description) {
-                                echo wp_trim_words($description, 20, '...');
-                            } else {
-                                echo '説明文はありません。';
-                            }
+                            if ($description): ?>
+                                <div class="shop-discription">
+                                    <p><?php echo wp_trim_words($description, 20, '...'); ?></p>
+                                </div>
+                            <?php else: ?>
+                               <p>説明文はありません</p>
+                            <?php endif; ?>
                             ?>
                         </p>
                     </a>
