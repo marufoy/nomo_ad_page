@@ -86,7 +86,6 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    border: 2px solid lime;
 }
 
 .genre-image p {
@@ -102,3 +101,10 @@ body {
     opacity: 0.9;
 }
 
+
+.custom-thumbnail img {
+    width: 150px; /* 幅を固定 */
+    height: auto; /* 高さはアスペクト比を保つ */
+    display: block; /* 不要な余白を防ぐ */
+    margin: 0 auto; /* 画像を中央寄せにする */
+}

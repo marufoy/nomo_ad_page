@@ -14,9 +14,21 @@
         while ($latest_shops->have_posts()) : $latest_shops->the_post();
             // 各店舗のタイトルとサムネイルを表示
             the_title('<h3>', '</h3>');
-            if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail');
-            }
+           
+            // ACFのサムネイル画像を取得する
+            $thumbnail = get_field('store_image');
+            if ($thumbnail) :
+                ?>
+                <div class="custom-thumbnail">
+                <img src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>">
+                </div>
+                <?php
+            else :
+                // 画像がない場合はデフォルト画像を表示
+                ?>
+                <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
+                <?php
+            endif;
             the_excerpt(); // 簡単な説明を表示
         endwhile;
         wp_reset_postdata();
@@ -31,6 +43,7 @@
             'taxonomy' => 'genre',
             'hide_empty' => false,
         ));
+
 
         foreach ($genres as $genre) :
          // ACFで設定したカスタムフィールドから画像URLを取得
