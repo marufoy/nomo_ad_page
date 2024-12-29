@@ -1,153 +1,177 @@
-/*
-Theme Name: ad_page_theme
-Version: 1.0
-*/
-
-/* 以下にスタイルを追加 */
+/* 全体の設定 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     background-color: rgb(204, 199, 137);
+    color: #333;
 }
 
 .container {
-    width: 100%;         /* 画面全体を占める */
-    max-width: 1300px;   /* 最大幅を指定 */
-    margin: 0 auto;      /* 中央揃え */
-    padding: 20px;   /* 固定の余白 */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.site-header{
+/* ヘッダー */
+.site-header {
     background-color: #000;
     color: #fff;
     display: flex;
     justify-content: space-between;
 
-    .logo{
+    .logo {
         padding: 30px 10px 5px 20px;
+
         h1 {
             font-size: 1.7rem;
-            }
-    
+        }
+
         h2 {
             font-size: 1rem;
             color: #ECDE0C;
         }
     }
 
-
-
-    .posting-button{
+    .posting-button {
         background-color: #ECDE0C;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        span{
+        span {
             color: #000;
         }
     }
 }
 
+/* ジャンルのスタイル */
 .genre-container {
     text-align: center;
     margin: 20px auto;
     max-width: 1200px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .genre-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+
+        .genre-item {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 8px;
+
+            .genre-image {
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+
+                p {
+                    font-size: 18px;
+                    font-weight: bold;
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 10px 15px;
+                    border-radius: 4px;
+                }
+            }
+
+            &:hover .genre-image {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+    }
 }
 
-.genre-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.genre-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.genre-item {
-    text-decoration: none;
-    color: white;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.genre-image {
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.genre-image p {
-    font-size: 18px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
-    border-radius: 4px;
-}
-
-.genre-item:hover .genre-image {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-
-.custom-thumbnail img {
-    width: 150px; /* 幅を固定 */
-    height: auto; /* 高さはアスペクト比を保つ */
-    display: block; /* 不要な余白を防ぐ */
-}
-
-.single-shop-info{
-   border: 1px solid red;
-
-}
-
-
-
+/* ショップの詳細ページ */
 .single-shop-info {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+
+    .store-name {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .shop-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        .custom-thumbnail {
+            max-width: 300px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .shop-description {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            min-height: 300px;
+            background-color: #fff7c4;
+        }
+    }
 }
 
-.store-name {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+/* ショップのグリッド表示 */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 
-.shop-content {
-    display: flex;
-    align-items: flex-start; /* 縦方向の揃え方 */
-    gap: 20px; /* 画像と本文の間の余白 */
-}
+    .shop-item {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-.custom-thumbnail {
-    max-width: 300px; /* 画像の最大幅を設定 */
-    flex-shrink: 0; /* 画像のサイズを固定 */
-}
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-.custom-thumbnail img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* 角を丸める場合 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 画像に影を追加 */
-}
+        h2 {
+            font-size: 18px;
+            margin: 15px;
+            color: #333;
+        }
 
-.shop-description {
-    flex: 1; /* 本文部分が残りの幅を使用 */
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+        p {
+            font-size: 14px;
+            margin: 15px;
+            color: #666;
+        }
+
+        .custom-thumbnail {
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
 }
