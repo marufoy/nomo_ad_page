@@ -41,8 +41,3 @@ function create_genre_taxonomy()
 add_action('init', 'create_genre_taxonomy');
 
 
-function custom_thumbnail_sizes() {
-    add_image_size('small-thumbnail', 100, 100, true); // 幅100px、高さ100px、切り抜き
-}
-add_action('after_setup_theme', 'custom_thumbnail_sizes');
-?>
