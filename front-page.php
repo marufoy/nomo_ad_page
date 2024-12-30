@@ -19,7 +19,7 @@
             $thumbnail = get_field('store_image');
             if ($thumbnail) :
                 ?>
-                <div class="custom-thumbnail">
+                <div class="latest-info-thumbnail">
                 <img src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                 </div>
                 <?php
