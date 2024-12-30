@@ -99,16 +99,51 @@ body {
 /* 最新情報のサムネイル */
 
 .latest-info {
-  .latest-info-thumbnail {
-    border: 1px solid red;
-    img {
-      max-width: 300px; /* サムネイルの最大幅 */
-      height: auto; /* 高さはアスペクト比に従う */
-      display: block; /* ブロック要素化 */
-      border-radius: 8px; /* 角を丸くする */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    text-align: center; /* タイトルなどを中央揃え */
+    margin: 20px auto;
+    max-width: 1200px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
-  }
+
+    .latest-info-container {
+        display: flex; /* フレックスボックスで横並び */
+        gap: 20px; /* アイテム間のスペース */
+        justify-content: center; /* 横方向に中央揃え */
+        flex-wrap: wrap; /* 横幅が足りない場合は折り返し */
+    }
+
+    .latest-info-item {
+        text-align: left; /* タイトルなどは左揃え */
+        max-width: 200px; /* 各アイテムの最大幅 */
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-5px); /* ホバー時の浮き上がり */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .latest-info-thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px 8px 0 0; /* 上部のみ丸める */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影 */
+    }
+
+    .latest-info-item h3 {
+        font-size: 16px;
+        margin: 10px;
+        color: #333;
+    }
 }
 
 /* ショップの詳細ページ */
