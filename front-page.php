@@ -24,7 +24,7 @@
                         </div>
                     <?php else: ?>
                         <div class="latest-info-thumbnail">
-                            <img src="https://example.com/default-image.jpg" alt="デフォルト画像">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像">
                         </div>
                     <?php endif; ?>
 
@@ -40,33 +40,32 @@
 </div>
 
 
-    <div class="genre-container">
-        <h2>掲載ジャンル</h2>
-        <div class="genre-grid">
-            <?php
-            $genres = get_terms(array(
-                'taxonomy' => 'genre',
-                'hide_empty' => false,
-            ));
+<div class="genre-container">
+    <h2>掲載ジャンル</h2>
+    <div class="genre-grid">
+        <?php
+        $genres = get_terms(array(
+            'taxonomy' => 'genre',
+            'hide_empty' => false,
+        ));
 
 
-            foreach ($genres as $genre):
-                // ACFで設定したカスタムフィールドから画像URLを取得
-                $genre_image = get_field('genre_image', $genre);
+        foreach ($genres as $genre):
+            // ACFで設定したカスタムフィールドから画像URLを取得
+            $genre_image = get_field('genre_image', $genre);
 
-                if (!$genre_image) {
-                    $genre_image = "http://adpagedev.local/wp-content/uploads/2024/12/keyboard-6753584_1280.jpg";
-                }
-
-                ?>
-                <a href="<?php echo get_term_link($genre); ?>" class="genre-item">
-                    <div class="genre-image" style="background-image: url('<?php echo $genre_image ?>');">
-                        <p><?php echo esc_html($genre->name); ?></p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
-        </div>
+            if (!$genre_image) {
+                $genre_image = get_template_directory_uri() . "/assets/images/no-image.png";
+            }
+            ?>
+            <a href="<?php echo get_term_link($genre); ?>" class="genre-item">
+                <div class="genre-image" style="background-image: url('<?php echo $genre_image ?>');">
+                    <p><?php echo esc_html($genre->name); ?></p>
+                </div>
+            </a>
+        <?php endforeach; ?>
     </div>
+</div>
 
 
 </div>
