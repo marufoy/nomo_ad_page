@@ -2,22 +2,19 @@
 
 <div class="latest-info">
     <h2>最新情報</h2>
-    <div class="latest-info-container">
+    <div class="latest-info-container">  <!-- Slickが適用されるコンテナ -->
         <?php
         $args = array(
             'post_type' => 'shop_info',
-            'posts_per_page' => 5, // 最新5件を取得
+            'posts_per_page' => 5,
         );
         $latest_shops = new WP_Query($args);
-
         if ($latest_shops->have_posts()):
             while ($latest_shops->have_posts()):
                 $latest_shops->the_post();
-
-                // ACFのサムネイル画像を取得
                 $thumbnail = get_field('store_image');
-                ?>
-                <div class="latest-info-item">
+        ?>
+                <div class="latest-info-item">  <!-- 各スライドとなるアイテム -->
                     <?php if ($thumbnail): ?>
                         <div class="latest-info-thumbnail">
                             <img src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>">
@@ -27,11 +24,9 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像">
                         </div>
                     <?php endif; ?>
-
-                    <?php // タイトルを表示 ?>
                     <h3><?php the_title(); ?></h3>
                 </div>
-                <?php
+        <?php
             endwhile;
             wp_reset_postdata();
         endif;

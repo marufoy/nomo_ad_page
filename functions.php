@@ -41,3 +41,18 @@ function create_genre_taxonomy()
 add_action('init', 'create_genre_taxonomy');
 
 
+function enqueue_slick() {
+    // Slick CSS
+    wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/slick/slick.css', array(), '1.8.1');
+    wp_enqueue_style('slick-theme-css', get_template_directory_uri() . '/assets/slick/slick-theme.css', array('slick-css'), '1.8.1'); // slick.css に依存
+
+    // Slick JavaScript
+    wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/slick/slick.js', array('jquery'), '1.8.1', true);
+
+    // カスタムスクリプト（slickを初期化するため）
+    wp_enqueue_script('custom-slick-init', get_template_directory_uri() . '/assets/slick/custom-slick-init.js', array('slick-js'), '1.0', true);
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_slick');
+
+
