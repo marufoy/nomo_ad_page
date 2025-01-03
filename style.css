@@ -223,3 +223,28 @@ body {
     }
   }
 }
+.latest-info .slick-prev, .latest-info .slick-next {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 100px;
+  opacity: 0.8;
+  border-radius: 0px;
+}
+
+.slick-next{
+  right: -41px!important;
+}
+
+.slick-prev{
+  left: -41px!important;
+}
+
+.slick-prev:before {
+  content: '⇦'!important;
+  }
+
+.slick-next:before {
+  content: '⇨'!important;
+  }
