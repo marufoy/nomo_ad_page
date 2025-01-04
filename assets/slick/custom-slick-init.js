@@ -5,9 +5,11 @@ jQuery(function($) {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    dots: true,
+                    arrows: false,
                 }
             }
         ],
