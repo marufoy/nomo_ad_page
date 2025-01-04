@@ -284,3 +284,8 @@ body {
 .slick-next:before {
   content: '⇨' !important;
 }
+
+/* magnific-popupのプロパティをオーバーライド */
+.mfp-wrap .mfp-container .mfp-content .mfp-figure .mfp-img {
+  max-height: 470px!important;
+}

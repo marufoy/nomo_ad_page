@@ -41,7 +41,8 @@ function create_genre_taxonomy()
 add_action('init', 'create_genre_taxonomy');
 
 
-function enqueue_slick() {
+function enqueue_slick()
+{
     // Slick CSS
     wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/slick/slick.css', array(), '1.8.1');
     wp_enqueue_style('slick-theme-css', get_template_directory_uri() . '/assets/slick/slick-theme.css', array('slick-css'), '1.8.1'); // slick.css に依存
@@ -56,3 +57,15 @@ function enqueue_slick() {
 add_action('wp_enqueue_scripts', 'enqueue_slick');
 
 
+function enqueue_magnific_popup()
+{
+    wp_enqueue_style('magnific-popup.css', get_template_directory_uri() . '/assets/css/magnific-popup.css');
+    wp_enqueue_script('magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_magnific_popup');
+
+function enqueue_custom_scripts()
+{
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery', 'magnific-popup-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
