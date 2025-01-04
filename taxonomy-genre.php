@@ -31,12 +31,11 @@
                             // フィールドが存在する場合にトリムして表示
                             if ($description): ?>
                                 <div class="shop-discription">
-                                    <p><?php echo wp_trim_words($description, 20, '...'); ?></p>
+                                    <p><?php echo wp_trim_words($description, 40, '...'); ?></p>
                                 </div>
                             <?php else: ?>
                                <p>説明文はありません</p>
                             <?php endif; ?>
-                            ?>
                         </p>
                     </a>
                 </div>
