@@ -17,7 +17,6 @@ body {
   }
 }
 
-
 /* ヘッダー */
 .site-header {
   background-color: #000;
@@ -182,6 +181,12 @@ body {
   gap: 20px;
 }
 
+@media (max-width: 1024px) {
+  .shop-content {
+    display: block;
+  }
+}
+
 .media-area {
   display: flex;
   flex-direction: column;
@@ -209,6 +214,11 @@ body {
   color: #333;
   min-height: 350px;
   background-color: #fff7c4;
+}
+@media (max-width: 1024px) {
+  .shop-description{
+    margin-top: 20px;
+  }
 }
 
 /* サブ画像（詳細画像）のスタイル */
