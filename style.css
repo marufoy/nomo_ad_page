@@ -37,6 +37,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 
     span {
       color: #000;
@@ -93,64 +94,65 @@ body {
         opacity: 0.9;
       }
     }
-  } 
+  }
 }
 
 /* 最新情報のサムネイル */
 
 .latest-info {
-    margin: 20px auto;
-    max-width: 1200px;
+  margin: 20px auto;
+  max-width: 1200px;
 
-    h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid;
-    }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+  }
 }
 
 .latest-info-container {
-    /* Slickのデフォルトのスタイリングを活用 */
-    .slick-slide {
-        padding: 0 10px;  
-    }
+  /* Slickのデフォルトのスタイリングを活用 */
+  .slick-slide {
+    padding: 0 10px;
+  }
 }
 
 .latest-info-item {
-    text-align: center;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .latest-info-thumbnail {
-    overflow: hidden; 
+  overflow: hidden;
 }
 
 .latest-info-thumbnail img {
-    width: 100%;
-    height: 300px; 
-    object-fit: cover; 
-    display: block;
-    border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 8px 0 0;
 }
 
 .latest-info-item h3 {
-    font-size: 18px;
-    margin: 10px;
-    color: #333;
+  font-size: 18px;
+  margin: 10px;
+  color: #333;
 }
 
 /* ショップの詳細ページ */
 .single-shop-info {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 60px 20px;
 }
 
 .store-name {
+  border-bottom: 1px solid;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -177,7 +179,6 @@ body {
 .custom-thumbnail img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -254,8 +255,9 @@ body {
 
 .shop-item .custom-thumbnail img {
   width: 100%;
-  height: auto;
+  max-height: 200px;
   display: block;
+  object-fit: cover;
 }
 
 .latest-info .slick-prev,
@@ -278,14 +280,80 @@ body {
 }
 
 .slick-prev:before {
-  content: '⇦' !important;
+  content: "⇦" !important;
 }
 
 .slick-next:before {
-  content: '⇨' !important;
+  content: "⇨" !important;
 }
 
 /* magnific-popupのプロパティをオーバーライド */
 .mfp-wrap .mfp-container .mfp-content .mfp-figure .mfp-img {
-  max-height: 470px!important;
+  max-height: 470px !important;
+}
+
+/* footer */
+footer {
+  background-color: #333; /* フッターの背景色 */
+  color: #fff; /* 文字色 */
+  padding: 20px 0;
+
+  .site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .footer-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 14px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #f0c040; /* ホバー時のリンク色 */
+          }
+        }
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        a {
+          color: #fff;
+          font-size: 14px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #f0c040;
+          }
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #ccc;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
 }
