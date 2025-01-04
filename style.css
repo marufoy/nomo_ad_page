@@ -37,6 +37,18 @@ body {
     }
   }
 
+  @media (max-width: 1024px) {
+    .logo {
+      h1 {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
   .posting-button {
     background-color: #ecde0c;
     display: flex;
@@ -46,6 +58,14 @@ body {
 
     span {
       color: #000;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .posting-button {
+      span {
+        font-size: 10px;
+      }
     }
   }
 }
@@ -181,7 +201,7 @@ body {
   gap: 20px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .shop-content {
     display: block;
   }
@@ -193,6 +213,12 @@ body {
   gap: 10px;
   flex-shrink: 0;
   max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .media-area {
+    margin: 0 auto;
+  }
 }
 
 .custom-thumbnail {
@@ -216,7 +242,7 @@ body {
   background-color: #fff7c4;
 }
 @media (max-width: 1024px) {
-  .shop-description{
+  .shop-description {
     margin-top: 20px;
   }
 }
@@ -383,6 +409,12 @@ footer {
       color: #ccc;
       text-align: center;
       margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footer-container {
+      padding: 15px;
     }
   }
 }
