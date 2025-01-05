@@ -21,7 +21,7 @@
                     <h2 class="sub-logo-title">行きつけのお得をもっと身近に！</h2>
                 </a>
             </div>
-            <a class="posting-button" href="<?php echo esc_url(home_url('/')) ?>">
+            <a class="posting-button" href="<?php echo esc_url(home_url('/contact')) ?>">
                 <span>掲載希望の方はこちら →</span>
             </a>
         </div>
