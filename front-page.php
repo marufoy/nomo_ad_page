@@ -58,8 +58,8 @@
                 }
                 ?>
                 <a href="<?php echo get_term_link($genre); ?>" class="genre-item">
-                    <div class="genre-image" style="background-image: url('<?php echo $genre_image ?>');">
-                        <p><?php echo esc_html($genre->name); ?></p>
+                    <div class="genre-image" style="background-image: url('<?php echo $genre_image ?>');"
+                        data-genre="<?php echo esc_attr($genre->name); ?>">
                     </div>
                 </a>
             <?php endforeach; ?>
