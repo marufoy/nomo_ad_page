@@ -1,7 +1,7 @@
 jQuery(function($) {
     $('.latest-info-container').slick({
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
             {
