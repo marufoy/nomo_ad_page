@@ -31,7 +31,7 @@
         </div>
         <!-- 掲載希望ボタン -->
         <a class="posting-button" href="<?php echo esc_url(home_url('/contact')); ?>">
-            <span>掲載希望の方はこちら →</span>
+            <span>加盟店登録希望の方はこちら →</span>
         </a>
     </div>
 </header>
